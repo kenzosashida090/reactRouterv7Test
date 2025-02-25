@@ -5,7 +5,7 @@ import { NavLink } from "react-router"
 
 const NavBar: React.FC= () => {
     return (
-        <header className="w-full px-8 bg-gray-50 text-gray-700 ">
+        <header className="w-full px-8 bg-white-50 text-gray-70 shadow-sm ">
             <div className="container flex flex-col md:flex-row items-center justify-between py-4 max-w-7xl  ">
              <div className="flex flex-col md:flex-row items-center">
                 <NavLink to="/" className="flex flex-col md:flex-row items-center"><span className="text-xl font-black ">REACT<span className="text-blue-400">Explorer</span></span></NavLink>
