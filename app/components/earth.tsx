@@ -1,7 +1,6 @@
 import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, useGLTF } from '@react-three/drei';
-import { TextureLoader } from 'three';
-import { useLoader } from '@react-three/fiber';
+import {  useGLTF } from '@react-three/drei';
+
 
 import React from 'react';
 const Earth: React.FC = ()=> {
@@ -59,3 +58,4 @@ const Scene : React.FC = () => {
 }
 
 export default Scene
+
