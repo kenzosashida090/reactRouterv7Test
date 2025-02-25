@@ -1,7 +1,7 @@
 import { Link } from "react-router";
 import type { Route } from "./+types/home";
 import Scene from "~/components/earth";
-import { Suspense } from "react";
+import React from "react";
 
 
 export function meta({}: Route.MetaArgs) {
@@ -10,11 +10,10 @@ export function meta({}: Route.MetaArgs) {
     { name: "Look up into our country data", content: "Welcome to REACTExplorer!" },
   ];
 }
-
-export default function Home() {
+const  Home: React.FC = () => {
   return(
     <div className=" px-2 py-32 bg-white md:px-0 " >
-      <div className="container items-center max-w-6xl mx-auto xl:px-5">
+      <div className="container items-center max-w-6xl mx-auto xl:px-5 shadow-sm">
         <div className="flex flex-wrap items-center sm:mx-3"> 
         <div className="w-full md:w-1/2"  >
         <div className="space-y-6 sm:max-w-md lg:max-w-lg mb-7">
@@ -27,7 +26,7 @@ export default function Home() {
                 capitals to regions!
               </p>
         </div>
-        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 md:space-y-0 ease-out duration-300 transition-all">
+        <div className="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 ease-out duration-300 transition-all">
           <Link to="/countries" className="flex items-center justify-center px-6 py-3 bg-blue-500 hover:bg-blue-700 ease-out duration-300 transition-all text-white font-bold py-2 px-4 rounded">
           Explore Now
           <svg
@@ -50,7 +49,7 @@ export default function Home() {
         </div>
       </div>
         <div>
-        <div className="hidden md:block ">
+        <div className="hidden md:flex items-center justify-center ml-30 ">
             <Scene/>
         </div>
         <div>
@@ -62,3 +61,5 @@ export default function Home() {
   </div>
   )
 }
+
+export default Home;
