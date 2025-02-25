@@ -1,4 +1,4 @@
-import React, { cache, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import type {Route} from "./+types/country"
 import { Link } from "react-router"
 
@@ -23,18 +23,19 @@ const generateKey = (request: Request) => {
  }
 
 
- const Countries = ({loaderData}: { loaderData: any[] })=>{
+ const Countries = ({loaderData}: Route.ComponentProps)=>{
     const [search, setSearch] = useState("")
     const [region, setRegion] = useState("")
     const filteredCountries = useMemo(()=> {
-        return loaderData.filter((country:any)=> {
+        const data = loaderData || [];
+        return data.filter((country:any)=> {
             const matchesRegion = !region || country.region.toLowerCase() === region.toLowerCase()   
             const matchesSearch = !search ||   country.name.common.toLowerCase().includes(search.toLowerCase())
            
             return matchesSearch && matchesRegion
            }
                
-           
+            
            )
     },[loaderData,search, region]) 
     return (
